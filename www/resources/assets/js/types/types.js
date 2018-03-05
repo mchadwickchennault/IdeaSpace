@@ -1,0 +1,5 @@
+export const RECEIVE_IDEAS = 'RECEIVE_IDEAS';
+export const IDEAS_ERROR = 'IDEAS_ERROR';
+export const LOADING_IDEAS = 'LOADING_IDEAS';
+export const IDEA_SAVED = 'IDEA_SAVED';
+export const DUPLICATE_TITLE = 'DUPLICATE_TITLE';

@@ -1,0 +1,26 @@
+version: '3.0'
+volumes:
+  db:
+services:
+  is_mysql:
+    container_name: is_mysql
+    build: ./mysql
+    image: is_mysql:tag
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+    volumes:
+      - ./mysql/mysqldata:/var/lib/mysql
+  is_web:
+    container_name: is_web
+    build: ./web
+    image: is_web:tag
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+    - ../www:/var/www
+    depends_on:
+      - is_mysql
+
